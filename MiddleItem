@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class MiddleItem {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        int[] userList = new int[9];
+        int numValues;
+        int curValue;
+        numValues = 0;
+        curValue = scnr.nextInt();
+
+        while (curValue != -1) {
+            if (numValues == 9) {
+                System.out.println("Too many inputs");
+                return;
+            }
+            userList[numValues++] = curValue;
+            curValue = scnr.nextInt();
+        }
+
+        if (numValues % 2 == 1) {
+            System.out.println(userList[numValues / 2]);
+        } else {
+            System.out.println(userList[(numValues - 1) / 2] + " " + userList[numValues / 2]);
+        }
+    }
+}
